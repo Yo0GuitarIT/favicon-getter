@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favicon 取得器</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" data-state="idle">
+      <h1>🔖 Favicon 取得器</h1>
+
+      <div class="input-group">
+        <input
+          type="url"
+          id="urlInput"
+          placeholder="輸入網站 URL (例如: https://www.google.com)"
+        />
+        <button id="getFaviconBtn" onclick="getFavicons()">取得 Favicon</button>
+      </div>
+
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        正在取得 favicon...
+      </div>
+
+      <div class="error" id="error" data-auto-hide="true"></div>
+      <div class="success" id="success" data-auto-hide="true"></div>
+
+      <div class="results" id="results">
+        <div class="favicon-grid" id="faviconGrid"></div>
+      </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
