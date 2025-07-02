@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favicon 取得器</title>
     <link rel="stylesheet" href="style.css" />
@@ -15,20 +15,33 @@
           type="url"
           id="urlInput"
           placeholder="輸入網站 URL (例如: https://www.google.com)"
+          aria-label="網站 URL 輸入欄位"
         />
         <button id="getFaviconBtn" onclick="getFavicons()">取得 Favicon</button>
       </div>
 
-      <div class="loading" id="loading">
+      <div class="loading" id="loading" aria-live="polite">
         <div class="spinner"></div>
         正在取得 favicon...
       </div>
 
-      <div class="error" id="error" data-auto-hide="true"></div>
-      <div class="success" id="success" data-auto-hide="true"></div>
+      <div
+        class="error"
+        id="error"
+        data-auto-hide="true"
+        role="alert"
+        aria-live="assertive"
+      ></div>
+      <div
+        class="success"
+        id="success"
+        data-auto-hide="true"
+        role="status"
+        aria-live="polite"
+      ></div>
 
       <div class="results" id="results">
-        <div class="favicon-grid" id="faviconGrid"></div>
+        <div class="favicon-grid" id="faviconGrid" role="grid"></div>
       </div>
     </div>
 
