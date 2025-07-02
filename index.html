@@ -3,46 +3,77 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Favicon 取得器</title>
+    <meta
+      name="description"
+      content="免費的 Favicon 取得器工具，快速獲取任何網站的圖示檔案。支援多種格式和尺寸，一鍵複製連結或直接套用到您的網頁。"
+    />
+    <meta
+      name="keywords"
+      content="favicon, 網站圖示, icon, 圖示取得器, 網頁圖示, 免費工具"
+    />
+    <meta name="author" content="Favicon 取得器" />
+    <meta name="robots" content="index, follow" />
+    <title>Favicon 取得器 - 免費網站圖示獲取工具</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="http://127.0.0.1:5500/" />
   </head>
   <body>
     <div class="container" data-state="idle">
-      <h1>🔖 Favicon 取得器</h1>
+      <header>
+        <h1>🔖 Favicon 取得器</h1>
+        <p>快速獲取任何網站的 favicon 圖示</p>
+      </header>
 
-      <div class="input-group">
-        <input
-          type="url"
-          id="urlInput"
-          placeholder="輸入網站 URL (例如: https://www.google.com)"
-          aria-label="網站 URL 輸入欄位"
-        />
-        <button id="getFaviconBtn" onclick="getFavicons()">取得 Favicon</button>
-      </div>
+      <main>
+        <section class="input-section">
+          <div class="input-group">
+            <label for="urlInput" class="visually-hidden">網站 URL</label>
+            <input
+              type="url"
+              id="urlInput"
+              placeholder="輸入網站 URL (例如: https://www.google.com)"
+              aria-label="網站 URL 輸入欄位"
+              required
+            />
+            <button id="getFaviconBtn" onclick="getFavicons()" type="button">
+              取得 Favicon
+            </button>
+          </div>
+        </section>
 
-      <div class="loading" id="loading" aria-live="polite">
-        <div class="spinner"></div>
-        正在取得 favicon...
-      </div>
+        <section class="status-section">
+          <div class="loading" id="loading" aria-live="polite">
+            <div class="spinner"></div>
+            正在取得 favicon...
+          </div>
 
-      <div
-        class="error"
-        id="error"
-        data-auto-hide="true"
-        role="alert"
-        aria-live="assertive"
-      ></div>
-      <div
-        class="success"
-        id="success"
-        data-auto-hide="true"
-        role="status"
-        aria-live="polite"
-      ></div>
+          <div
+            class="error"
+            id="error"
+            data-auto-hide="true"
+            role="alert"
+            aria-live="assertive"
+          ></div>
+          <div
+            class="success"
+            id="success"
+            data-auto-hide="true"
+            role="status"
+            aria-live="polite"
+          ></div>
+        </section>
 
-      <div class="results" id="results">
-        <div class="favicon-grid" id="faviconGrid" role="grid"></div>
-      </div>
+        <section class="results-section">
+          <div class="results" id="results">
+            <div
+              class="favicon-grid"
+              id="faviconGrid"
+              role="grid"
+              aria-label="Favicon 結果網格"
+            ></div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <script type="module" src="js/main.js"></script>
